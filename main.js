@@ -24,9 +24,8 @@ function fetchCartoons(startId,number){
 }
 
 function fetchData(id,side){
-    var xkcdAPI = 'http://xkcd.com/'+id+'/info.0.json'
-    fetch(xkcdAPI)
-    .then(result => result.json())
+    var xkcdAPI = 'https://xkcd.now.sh/'+id
+    fetch(xkcdAPI).then(result => result.json())
     .then(data => {
         var strip = '<li><div><img src='+data.img+' class="responsive-image"></img></div></li>';
         var tagline = 'The fetcher has so far fetched '+id+' Cartoons';
@@ -35,4 +34,6 @@ function fetchData(id,side){
         
     });
 }
+
+
 
