@@ -1,6 +1,6 @@
-#Xkcd Fetcher
+# Xkcd Fetcher
 
-#Requirements
+# Requirements
 
 Fetch 10 items at the time starting from comic number 1
 Display the items on a 2x2 grid with the 2 items side by side, each items should display the comic as an image (the JSON response contains the Image URL e.g. https://imgs.xkcd.com/comics/woodpecker.png )
@@ -8,25 +8,25 @@ As the user scrolls a new HTTP request needs to be triggered that fetches the ne
 Nicely display how many comics have been loaded at the top of your web app
 When selecting a comic from the list, a gallery should open showing the full screen version of the comic and the title of the comic at the top of the full screen gallery
 
-#Design principles
+# Design principles
 Mobile first web app, it needs to work well on mobile screens
 The user needs to be able to navigate back to the main list from the gallery 
 
-#Approach
+# Approach
 Upon initial research I was able to discover the json interface provided by xkcd (https://xkcd.com/json.html). As a first step the idea is to use this as a backend, obviously this will not be efficient because we have to fetch 10 comic strips at a time and making 10 network calls doesn’t sound like a good idea but this helps us to kickstart quickly and focus on the front end first. Another neat idea to try will be to store the json responses in local storage and fetch the data from local store at the time of scroll. This will create a separate of concern between the UI and the actual crawler / fetcher. 
 
 For the front end, let’s begin by using some simple things first. After research it seems that the best way to create a good modern responsive design will be to use react along with a UI framework like material UI. But in the interest of time I am now pivoting towards using a simple fluid layout based on css. 
 
 Let’s start with a simple index.html and begin. Using live-server as the web server to locally test and deploy the app.
 
-#Installation
+# Installation
 Get the code. 
 Use npm install live-server to install the live-server or you can use a web server of your choice. 
 Then go to the folder and use the command 
 live-server
 This should start a web browser with the app running. 
 
-#What was missed / Learnings
+# What was missed / Learnings
 * The gallery on click is not yet implemented. 
 * I found a nice a way to use offline storage but ran out of time to implement it. Could be a next step as explained here (https://medium.com/codingthesmartway-com-blog/pure-javascript-building-a-real-world-application-from-scratch-5213591cfcd6)
 * Realized that something like a material UI using react would have been probably better over vanilla js and css but the learning curve for that seemed a bit too high in the begining. Although will be a nice exercise to try that. 
